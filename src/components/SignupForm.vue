@@ -14,7 +14,7 @@
 
         <label for="tempSkills">Skills</label>
         <input type="text" v-model="tempSkills" @keyup.alt="addSkill">
-        <div v-for="skill in skills" class="pill">
+        <div v-for="skill in skills" v-bind:key="skill" class="pill"> <!-- or :key="skill"-->
             <span @click="removeSkill(skill)">{{ skill }}</span>
         </div>
 
@@ -28,10 +28,10 @@
         </div>
         <!-- <div>
         <input type="checkbox" value="Mhmd" v-model="names">
-        <label>Mhmd</label>
+        <label>Mhmd</label> 
         
-        <input type="checkbox" value="sobhi" v-model="names">
-        <label>sobhi</label>
+        <input type="checkbox" value="nour" v-model="names">
+        <label>nour</label>
         
         <input type="checkbox" value="ghazal" v-model="names">
         <label>ghazal</label>
@@ -49,7 +49,7 @@
 
 <script>
 export default {
-    data() {
+    data() { 
         return {
             email: 'sobhi',
             password: '',
